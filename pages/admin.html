@@ -14,56 +14,57 @@
     />
     <link rel="stylesheet" href="../css/admin.css" />
   </head>
-  <body>
-    <div class="container">
-      <div class="navbar flex justify-around items-center bg-dark p-5">
-        <div class="logo">
-          <h3>
-            <i class="fa-solid fa-person-running"></i
-            ><a href="../index.html">Run With Us</a>
+  	<body>
+		<div class="container">
+			<div class="navbar flex justify-around items-center bg-dark p-5">
+			<div class="logo">
+        	 	 <h3>
+          			<i class="fa-solid fa-person-running fa-beat"></i>
+           			<a href="index.html">Run With Us</a>
           </h3>
-        </div>
-        <div class="nav-links flex gap-10">
-          <a href="admin.html">Admin</a>
-          <a href="cart.html">Cart</a>
-        </div>
-      </div>
-      <div class="main">
-        <h1>Admin Page</h1>
-        <form id="product-form">
-          <div>
-            <label for="name">Product name</label>
-            <input type="text" id="name" />
-          </div>
-          <div>
-            <label for="price">Price</label>
-            <input type="number" id="price" />
-          </div>
-          <div>
-            <label for="image-url">Image URL</label>
-            <input type="text" id="image-url" />
-          </div>
-          <div>
-            <label for="details">Details</label>
-            <input type="text" id="details" />
-          </div>
-          <button id="save-btn">Save product</button>
-        </form>
-        <table id="products-table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Price</th>
-              <th>Image</th>
-              <th>Edit</th>
-              <th>Delete</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
-      </div>
-      <div class="footer"></div>
-    </div>
-    <script type="module" src="../js/admin.js"></script>
-  </body>
+            </div>
+				<div class="nav-links flex gap-10">
+					<a href="admin.html">Admin</a>
+					<a href="cart.html">Cart</a>
+				</div>
+			</div>
+			<div class="main">
+				<h1>Admin Page</h1>
+				<form id="product-form">
+					<div>
+						<label for="name">Product name</label>
+						<input type="text" id="name" />
+					</div>
+					<div>
+						<label for="price">Price</label>
+						<input type="number" id="price" />
+					</div>
+					<div>
+						<label for="image-url">Image URL</label>
+						<input type="text" id="image-url" />
+					</div>
+					<div>
+						<label for="details">Details</label>
+						<input type="text" id="details" />
+					</div>
+					<button id="save-btn">Save product</button>
+				</form>
+				<table id="products-table">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Price</th>
+							<th>Image</th>
+							<th>Edit</th>
+							<th>Delete</th>
+						</tr>
+					</thead>
+					<tbody></tbody>
+				</table>
+			</div>
+			<div class="footer"></div>
+			<script type="module" src="../js/admin.js"></script>
+		</div>
+	</body>
+</html>
 </html>

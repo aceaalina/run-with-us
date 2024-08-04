@@ -1,48 +1,26 @@
-const url = "https://668d7a51099db4c579f3178d.mockapi.io/products";
+import {
+  getAllProducts,
+  getProductById,
+  deleteProduct,
+  addNewProduct,
+  updateProduct,
+} from "../api/products.js";
+import { mapProductToAdminTableRow } from "../utils/layout.js";
 
-//Load products in table at page loading
+const url = "https://668d7a51099db4c579f3178d.mockapi.io/product";
+
 const productsTableBody = document
   .getElementById("products-table")
   .querySelector("tbody");
 
 document.addEventListener("DOMContentLoaded", displayAllProducts);
 
-function getAllProducts() {
-  return fetch(url).then((response) => response.json());
-}
+async function displayAllProducts() {
+  const products = await getAllProducts();
 
-function getAllProductById(id) {
-  return fetch(`${url}/{${id}`).then((response) => response.json());
-}
-
-function displayAllProducts() {
-  getAllProducts().then((products) => {
-    productsTableBody.innerHTML = products
-      .map(
-        (product) => `
-            <tr>
-               <td>${product.name}</td>
-               <td>${product.price}</td>
-               <td>
-                  <img src="../${product.imageUrl}" width="50px" />
-               </td>
-               <td>
-                  <button class="edit-${product.id}">
-                     <i class="fa-solid fa-pen-to-square">
-                     </i>
-                  </button>
-               </td>
-               <td>
-                  <button class="delete-${product.id}">
-                     <i class="fa-solid fa-trash"></i>
-                  </button>
-               </td>
-               
-            </tr>
-            `
-      )
-      .join("");
-  });
+  productsTableBody.innerHTML = products
+    .map(mapProductToAdminTableRow)
+    .join("");
 }
 
 // save new product
@@ -56,9 +34,8 @@ let editMode = false;
 let currentEditableProductId;
 
 saveProductButton.addEventListener("click", saveProduct);
-console.log(nameInput, priceInput, imageUrlInput, detailsInput);
 
-function saveProduct(event) {
+async function saveProduct(event) {
   event.preventDefault();
 
   const product = {
@@ -68,51 +45,47 @@ function saveProduct(event) {
     details: detailsInput.value,
   };
 
-  console.log(JSON.stringify(product), product);
-
-  fetch(editMode ? `${url}/${currentEditableProductId}` : url, {
-    method: editMode ? "PUT" : "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(product),
-  }).then(() => {
-    form.reset();
-    displayAllProducts();
-  });
+  if (editMode) {
+    const editedProduct = await updateProduct(
+      product,
+      currentEditableProductId
+    );
+    if (editedProduct !== null) {
+      form.reset();
+      displayAllProducts();
+      editMode = false;
+    }
+  } else {
+    const newProduct = await addNewProduct(product);
+    if (newProduct !== null) {
+      form.reset();
+      displayAllProducts();
+    }
+  }
 }
+// edit product
+productsTableBody.addEventListener("click", handleActions);
 
-//edit product
-
-productsTableBody.addEventListener("click", handleAction);
-
-function handleAction(event) {
+async function handleActions(event) {
   const className = event.target.parentElement.className;
-  if (className.includes("edite")) {
+  if (className.includes("edit")) {
     const productId = className.split("-")[1];
     editProduct(productId);
-  } else if (className.includes("detele")) {
+  } else if (className.includes("delete")) {
     const productId = className.split("-")[1];
-    deleteProduct(productId);
+    await deleteProduct(productId);
+    await displayAllProducts();
   }
 }
 
 function editProduct(id) {
-  getAllProductById(id).then((product) => {
+  getProductById(id).then((product) => {
     editMode = true;
     nameInput.value = product.name;
     priceInput.value = product.price;
-    imageUrlInput = product.imageUrl;
-    detailsInput.value.product.details;
+    imageUrlInput.value = product.imageUrl;
+    detailsInput.value = product.details;
 
     currentEditableProductId = product.id;
-  });
-}
-
-function deleteProduct(id) {
-  fetch(`${url}/${id}`, {
-    method: "DELETE",
-  }).then(() => {
-    displayAllProducts();
   });
 }

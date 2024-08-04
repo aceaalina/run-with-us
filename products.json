@@ -1,122 +1,142 @@
 [
-    {
-        "name": "Tricou pentru alergare",
-        "price": 90,
-        "imageUrl": "images/tricou_alergare.png",
-        "details": "Tricou din material respirabil, perfect pentru antrenamente intense."
-    },
-    {
-        "name": "Pantaloni scurți pentru alergare",
-        "price": 80,
-        "imageUrl": "images/pantaloni_scurti_alergare.png",
-        "details": "Pantaloni scurți cu tehnologie de uscare rapidă."
-    },
-    {
-        "name": "Colanți de compresie",
-        "price": 150,
-        "imageUrl": "images/colanti_compresie.png",
-        "details": "Colanți de compresie, asigură suport și confort maxim."
-    },
-    {
-        "name": "Jachetă de alergare",
-        "price": 200,
-        "imageUrl": "images/jacheta_alergare.png",
-        "details": "Jachetă de alergare, ideală pentru zilele reci și vântoase."
-    },
-    {
-        "name": "Șapcă pentru alergare",
-        "price": 40,
-        "imageUrl": "images/sapca_alergare.png",
-        "details": "Șapcă cu protecție UV, perfectă pentru zilele însorite."
-    },
-    {
-        "name": "Mănuși de alergare",
-        "price": 70,
-        "imageUrl": "images/manusi_alergare.png",
-        "details": "Mănuși, oferă confort și protecție împotriva frigului."
-    },
-    {
-        "name": "Șosete de compresie",
-        "price": 50,
-        "imageUrl": "images/sosete_compresie.png",
-        "details": "Șosete de compresie, pentru o circulație mai bună a sângelui."
-    },
-    {
-        "name": "Borsetă pentru alergare",
-        "price": 60,
-        "imageUrl": "images/borseta_alergare.png",
-        "details": "Borsetă, ideală pentru a transporta lucrurile esențiale în timpul alergării."
-    },
-    {
-        "name": "Hanorac de alergare",
-        "price": 130,
-        "imageUrl": "images/hanorac_alergare.png",
-        "details": "Hanorac, confecționat din material moale și călduros."
-    },
-    {
-        "name": "Vestă reflectorizantă",
-        "price": 90,
-        "imageUrl": "images/vesta_reflectorizanta.png",
-        "details": "Vestă reflectorizantă, asigură vizibilitate maximă în condiții de lumină scăzută."
-    },
-    {
-        "name": "Bluză termică",
-        "price": 120,
-        "imageUrl": "images/bluza_termica.png",
-        "details": "Bluză termică, menține căldura în timpul alergărilor pe timp de iarnă."
-    },
-    {
-        "name": "Pantaloni de alergare",
-        "price": 110,
-        "imageUrl": "images/pantaloni_alergare.png",
-        "details": "Pantaloni, oferiți libertate de mișcare și confort."
-    },
-    {
-        "name": "Bandă pentru cap",
-        "price": 35,
-        "imageUrl": "images/banda_cap.png",
-        "details": "Bandă pentru cap, protejează împotriva transpirației și frigului."
-    },
-    {
-        "name": "Șosete de alergare",
-        "price": 45,
-        "imageUrl": "images/sosete_alergare.png",
-        "details": "Șosete, confecționate din material confortabil și respirabil."
-    },
-    {
-        "name": "Pantaloni scurți pentru alergare",
-        "price": 75,
-        "imageUrl": "images/pantaloni_alergare_scurti.png",
-        "details": "Pantaloni scurți, cu buzunare pentru depozitarea obiectelor mici."
-    },
-    {
-        "name": "Tricou de compresie",
-        "price": 100,
-        "imageUrl": "images/tricou_compresie.png",
-        "details": "Tricou de compresie, oferă suport muscular și confort."
-    },
-    {
-        "name": "Bluză de alergare cu mânecă lungă",
-        "price": 95,
-        "imageUrl": "images/bluza_alergare_lunga.png",
-        "details": "Bluză cu mânecă lungă, pentru alergări în zilele răcoroase."
-    },
-    {
-        "name": "Șort de alergare",
-        "price": 85,
-        "imageUrl": "images/sort_alergare.png",
-        "details": "Șort de alergare, confecționat din material ușor și respirabil."
-    },
-    {
-        "name": "Colanți pentru iarnă",
-        "price": 160,
-        "imageUrl": "images/colanti_iarna.png",
-        "details": "Colanți pentru iarnă, oferiți izolație termică și confort."
-    },
-    {
-        "name": "Hanorac cu glugă",
-        "price": 140,
-        "imageUrl": "images/hanorac_gluga.png",
-        "details": "Hanorac cu glugă, ideal pentru antrenamentele în aer liber."
-    }
+  {
+    "id": 1,
+    "name": "Tricou pentru alergare",
+    "price": 90,
+    "imageUrl": "images/tricou_alergare.png",
+    "details": "Tricou din material respirabil, perfect pentru antrenamente intense."
+  },
+  {
+    "id": 2,
+    "name": "Pantaloni scurți pentru alergare",
+    "price": 80,
+    "imageUrl": "images/pantaloni_scurti_alergare.png",
+    "details": "Pantaloni scurți cu tehnologie de uscare rapidă."
+  },
+  {
+    "id": 3,
+    "name": "Colanți de compresie",
+    "price": 150,
+    "imageUrl": "images/colanti_compresie.png",
+    "details": "Colanți de compresie, asigură suport și confort maxim."
+  },
+  {
+    "id": 4,
+    "name": "Jachetă de alergare",
+    "price": 200,
+    "imageUrl": "images/jacheta_alergare.png",
+    "details": "Jachetă de alergare, ideală pentru zilele reci și vântoase."
+  },
+  {
+    "id": 5,
+    "name": "Șapcă pentru alergare",
+    "price": 40,
+    "imageUrl": "images/sapca_alergare.png",
+    "details": "Șapcă cu protecție UV, perfectă pentru zilele însorite."
+  },
+  {
+    "id": 6,
+    "name": "Mănuși de alergare",
+    "price": 70,
+    "imageUrl": "images/manusi_alergare.png",
+    "details": "Mănuși, oferă confort și protecție împotriva frigului."
+  },
+  {
+    "id": 7,
+    "name": "Șosete de compresie",
+    "price": 50,
+    "imageUrl": "images/sosete_compresie.png",
+    "details": "Șosete de compresie, pentru o circulație mai bună a sângelui."
+  },
+  {
+    "id": 8,
+    "name": "Borsetă pentru alergare",
+    "price": 60,
+    "imageUrl": "images/borseta_alergare.png",
+    "details": "Borsetă, ideală pentru a transporta lucrurile esențiale în timpul alergării."
+  },
+  {
+    "id": 9,
+    "name": "Hanorac de alergare",
+    "price": 130,
+    "imageUrl": "images/hanorac_alergare.png",
+    "details": "Hanorac, confecționat din material moale și călduros."
+  },
+  {
+    "id": 10,
+    "name": "Vestă reflectorizantă",
+    "price": 90,
+    "imageUrl": "images/vesta_reflectorizanta.png",
+    "details": "Vestă reflectorizantă, asigură vizibilitate maximă în condiții de lumină scăzută."
+  },
+  {
+    "id": 11,
+    "name": "Bluză termică",
+    "price": 120,
+    "imageUrl": "images/bluza_termica.png",
+    "details": "Bluză termică, menține căldura în timpul alergărilor pe timp de iarnă."
+  },
+  {
+    "id": 12,
+    "name": "Pantaloni de alergare",
+    "price": 110,
+    "imageUrl": "images/pantaloni_alergare.png",
+    "details": "Pantaloni, oferiți libertate de mișcare și confort."
+  },
+  {
+    "id": 13,
+    "name": "Bandă pentru cap",
+    "price": 35,
+    "imageUrl": "images/banda_cap.png",
+    "details": "Bandă pentru cap, protejează împotriva transpirației și frigului."
+  },
+  {
+    "id": 14,
+    "name": "Șosete de alergare",
+    "price": 45,
+    "imageUrl": "images/sosete_alergare.png",
+    "details": "Șosete, confecționate din material confortabil și respirabil."
+  },
+  {
+    "id": 15,
+    "name": "Pantaloni scurți pentru alergare",
+    "price": 75,
+    "imageUrl": "images/pantaloni_alergare_scurti.png",
+    "details": "Pantaloni scurți, cu buzunare pentru depozitarea obiectelor mici."
+  },
+  {
+    "id": 16,
+    "name": "Tricou de compresie",
+    "price": 100,
+    "imageUrl": "images/tricou_compresie.png",
+    "details": "Tricou de compresie, oferă suport muscular și confort."
+  },
+  {
+    "id": 17,
+    "name": "Bluză de alergare cu mânecă lungă",
+    "price": 95,
+    "imageUrl": "images/bluza_alergare_lunga.png",
+    "details": "Bluză cu mânecă lungă, pentru alergări în zilele răcoroase."
+  },
+  {
+    "id": 18,
+    "name": "Șort de alergare",
+    "price": 85,
+    "imageUrl": "images/sort_alergare.png",
+    "details": "Șort de alergare, confecționat din material ușor și respirabil."
+  },
+  {
+    "id": 19,
+    "name": "Colanți pentru iarnă",
+    "price": 160,
+    "imageUrl": "images/colanti_iarna.png",
+    "details": "Colanți pentru iarnă, oferiți izolație termică și confort."
+  },
+  {
+    "id": 20,
+    "name": "Hanorac cu glugă",
+    "price": 140,
+    "imageUrl": "images/hanorac_gluga.png",
+    "details": "Hanorac cu glugă, ideal pentru antrenamentele în aer liber."
+  } 
 ]
