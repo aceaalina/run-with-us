@@ -13,22 +13,22 @@ document.addEventListener("DOMContentLoaded", () => {
       const product = cart[id];
 
       const productCard = document.createElement("div");
-      productCard.className =
-        "flex justify-between items-center w-300 border-bottom";
+      productCard.className = "cart-item";
       const descreaseDisabled = product.quantity === 1 ? "disabled" : "";
       productCard.innerHTML = `
-			<img width="20px" src=../${product.imageUrl} />
-				<div class="w-150 h-40 flex gap-20 justify-between items-center">
-            	<span>${product.name}</span>
-            	<div>
-						<button data-id=${id} ${descreaseDisabled} class="decrease">-</button>
-						<span>${product.quantity}</span>
-						<button data-id=${id} class="increase">+</button>
-            	</div>
-				</div>
-				<span>${product.price * product.quantity} lei</span>
-				<button data-id=${id} class="delete">Sterge</button>
-         `;
+        <img src="../${product.imageUrl}" alt="${product.name}" />
+        <div class="details">
+          <span>${product.name}</span>
+          <span>${product.details}</span>
+        </div>
+        <div class="quantity">
+          <button data-id=${id} ${descreaseDisabled} class="decrease">-</button>
+          <span>${product.quantity}</span>
+          <button data-id=${id} class="increase">+</button>
+        </div>
+        <div class="price">${product.price * product.quantity} lei</div>
+        <button data-id=${id} class="delete">Sterge</button>
+      `;
       total = total + product.price * product.quantity;
       cartItemsContainer.appendChild(productCard);
     }

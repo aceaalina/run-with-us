@@ -2,9 +2,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 :root {
-  --primary-color: #d6efd8;
-  --dark-color: black;
-  --secondary-color: #80af81;
+  --primary-bg-color: #ffffff;
+  --card-bg-color: #333333;
+  --card-text-color: #ffffff;
+  --border-color: #666666;
 }
 
 * {
@@ -14,9 +15,8 @@
 }
 
 body {
-  background-color: var(--primary-color);
+  background-color: var(--primary-bg-color);
   font-family: "Roboto Condensed", sans-serif;
-  font-optical-sizing: auto;
   font-style: normal;
 }
 
@@ -33,6 +33,10 @@ body {
   justify-content: space-around;
 }
 
+.justify-between {
+  justify-content: space-between;
+}
+
 .items-center {
   align-items: center;
 }
@@ -45,35 +49,12 @@ body {
   gap: 20px;
 }
 
-.p-5 {
-  padding: 5px;
-}
-
-.bg-dark {
-  background-color: var(--secondary-color);
-}
-
-.navbar a,
-.navbar h3 {
-  color: var(--primary-color);
-  text-decoration: none;
-  font-size: 20px;
-  font-style: italic;
-}
-
-.navbar h3 i {
-  font-size: 28px;
-  padding-top: 10px;
-}
-
-.logo {
-  font-family: "Playwrite CU", cursive;
-  font-optical-sizing: auto;
-  font-style: normal;
-}
-
 .gap-50 {
   gap: 50px;
+}
+
+.p-5 {
+  padding: 5px;
 }
 
 .p-50 {
@@ -84,64 +65,133 @@ body {
   flex-wrap: wrap;
 }
 
-.product-card {
-  background-color: var(--primary-color);
-  width: 300px;
-  height: 400px;
-  text-align: center;
-  padding: 10px 5px;
-  border: 2px solid var(--secondary-color);
-  border-radius: 10px;
+.navbar {
+  background-color: var(--card-bg-color);
+  color: var(--card-text-color);
+  padding: 10px;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.navbar a,
+.navbar h3 {
+  color: var(--card-text-color);
+  text-decoration: none;
+  font-size: 16px;
+  font-style: italic;
+}
+
+.navbar h3 i {
+  font-size: 24px;
+  padding-top: 10px;
+}
+
+.logo {
+  font-family: "Playwrite CU", cursive;
+  font-style: normal;
+}
+
+.main {
+  background-color: var(--primary-bg-color);
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
   justify-content: space-between;
-  align-items: center;
+}
+
+.product-card {
+  background-color: var(--card-bg-color);
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+  padding: 15px 5px;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 .product-card img {
   width: 100%;
   height: auto;
-  max-height: 200px;
-  object-fit: cover;
+  border-bottom: 1px solid var(--border-color);
 }
 
-/* Media Queries for Responsive Design */
-@media (max-width: 1200px) {
-  .product-card {
-    width: 280px;
-  }
-  .navbar a,
-  .navbar h3 {
-    font-size: 18px;
-  }
+.product-card h2,
+.product-card p {
+  color: var(--card-text-color);
 }
 
-@media (max-width: 992px) {
-  .product-card {
-    width: 260px;
-  }
-  .navbar a,
-  .navbar h3 {
-    font-size: 16px;
-  }
+.add-to-cart {
+  background-color: #333;
+  color: #fff;
+  border: 2px solid #666;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s, border-color 0.3s;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.add-to-cart:hover {
+  background-color: #555;
+  border-color: #999;
+  transform: scale(1.05);
+}
+
+.add-to-cart:active {
+  background-color: #222;
+  border-color: #666;
+  transform: scale(0.98);
+}
+
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  margin-top: auto;
 }
 
 @media (max-width: 768px) {
-  .product-card {
-    width: 240px;
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
   }
+
   .navbar a,
   .navbar h3 {
     font-size: 14px;
   }
+
+  .main {
+    padding: 10px;
+  }
+
+  .product-card {
+    width: 100%;
+    max-width: none;
+    align-items: center;
+  }
 }
 
-@media (max-width: 576px) {
-  .product-card {
-    width: 220px;
-  }
+@media (max-width: 480px) {
   .navbar a,
   .navbar h3 {
     font-size: 12px;
+  }
+
+  .product-card {
+    padding: 10px;
   }
 }

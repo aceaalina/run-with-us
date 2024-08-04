@@ -1,0 +1,157 @@
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.shopping-cart {
+  background: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  margin: 20px auto;
+}
+
+.shopping-cart h2 {
+  margin: 0 0 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  flex-wrap: wrap;
+}
+
+.cart-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.cart-item .details {
+  flex-grow: 1;
+}
+
+.cart-item .details span {
+  display: block;
+}
+
+.cart-item .quantity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart-item .quantity button {
+  background-color: #ddd;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.cart-item .quantity span {
+  display: inline-block;
+  width: 20px;
+  text-align: center;
+}
+
+.cart-item .price {
+  margin-left: 20px;
+}
+
+.cart-item .delete {
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.cart-total {
+  text-align: right;
+  padding: 20px 0;
+  font-size: 1.2em;
+}
+
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cart-item img {
+    margin: 0 0 10px 0;
+    width: 80px;
+    height: 80px;
+  }
+
+  .cart-item .details {
+    margin-bottom: 10px;
+  }
+
+  .cart-item .quantity {
+    margin-bottom: 10px;
+  }
+
+  .cart-total {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .shopping-cart {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .cart-item img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .cart-item .quantity button {
+    padding: 3px 5px;
+  }
+
+  .cart-item .quantity span {
+    width: 15px;
+  }
+
+  .cart-total {
+    font-size: 0.9em;
+  }
+}
