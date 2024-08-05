@@ -20,7 +20,7 @@ body {
   border-radius: 5px;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 90%;
+  width: 50%;
   margin: 20px auto;
 }
 
@@ -79,6 +79,7 @@ body {
 
 .cart-item .price {
   margin-left: 20px;
+  margin-right: 20px;
 }
 
 .cart-item .delete {
@@ -106,7 +107,6 @@ body {
   left: 0;
 }
 
-/* Responsive styles */
 @media (max-width: 768px) {
   .cart-item {
     flex-direction: column;

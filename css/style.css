@@ -20,6 +20,10 @@ body {
   font-style: normal;
 }
 
+h3 {
+  color: white;
+}
+
 .flex {
   display: flex;
 }
@@ -93,6 +97,8 @@ body {
 }
 
 .main {
+  height: 60vh;
+  overflow-y: auto;
   background-color: var(--primary-bg-color);
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -163,6 +169,46 @@ body {
   margin-top: auto;
 }
 
+.sort-options {
+  background-color: var(--light-bg-color);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.sort-group {
+  width: 100%;
+  max-width: 400px;
+  text-align: left;
+}
+
+.sort-group label {
+  display: block;
+  font-weight: bold;
+  color: var(--card-bg-color);
+  margin-bottom: 5px;
+}
+
+.sort-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  background-color: #fff;
+  color: var(--card-bg-color);
+  font-size: 16px;
+}
+
+.sort-group select:focus {
+  outline: none;
+  border-color: #888;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
@@ -181,7 +227,18 @@ body {
   .product-card {
     width: 100%;
     max-width: none;
-    align-items: center;
+    margin: auto;
+  }
+  .sort-options {
+    padding: 10px;
+  }
+
+  .sort-group {
+    margin-bottom: 15px;
+  }
+
+  .sort-group select {
+    font-size: 14px;
   }
 }
 
@@ -193,5 +250,42 @@ body {
 
   .product-card {
     padding: 10px;
+  }
+  .add-to-cart {
+    background-color: #333;
+    color: #fff;
+    border: 2px solid #666;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, border-color 0.3s;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .add-to-cart:hover {
+    background-color: #555;
+    border-color: #999;
+    transform: scale(1.05);
+  }
+
+  .add-to-cart:active {
+    background-color: #222;
+    border-color: #666;
+    transform: scale(0.98);
+  }
+  .sort-options {
+    padding: 5px;
+  }
+
+  .sort-group {
+    margin-bottom: 10px;
+  }
+
+  .sort-group select {
+    font-size: 12px;
   }
 }

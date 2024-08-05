@@ -27,6 +27,39 @@
           <a href="pages/cart.html">Cart</a>
         </div>
       </div>
+      <div class="sort-options flex flex-col items-center bg-light p-5">
+        <div class="sort-group">
+          <label for="color-sort">Sortare după culoare:</label>
+          <select id="color-sort">
+            <option value="all">Toate</option>
+            <option value="alb">Alb</option>
+            <option value="negru">Negru</option>
+            <option value="albastru">Albastru</option>
+            <option value="gri">Gri</option>
+            <option value="roșu">Roșu</option>
+            <option value="verde">Verde</option>
+            <option value="galben">Galben</option>
+            <option value="portocaliu">Portocaliu</option>
+          </select>
+        </div>
+        <div class="sort-group">
+          <label for="price-sort">Sortare după preț:</label>
+          <select id="price-sort">
+            <option value="asc">Crescător</option>
+            <option value="desc">Descrescător</option>
+          </select>
+        </div>
+        <div class="sort-group">
+          <label for="size-sort">Sortare după mărime:</label>
+          <select id="size-sort">
+            <option value="all">Toate</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+          </select>
+        </div>
+      </div>
       <div class="main flex wrap gap-50 p-50 justify-between"></div>
       <div class="footer"><p>© 2024 Run With Us</p></div>
       <script type="module" src="index.js"></script>
