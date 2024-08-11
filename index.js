@@ -1,15 +1,19 @@
 import { getAllProducts } from "./api/products.js";
 import { mapProductToCard } from "./utils/layout.js";
 
-document.addEventListener("DOMContentLoaded", displayAllProducts);
+document.addEventListener("DOMContentLoaded", () => {
+  displayAllProducts();
+  setupPriceSort();
+});
+
 const mainContainer = document.querySelector(".main");
 
-async function displayAllProducts() {
-  const products = await getAllProducts();
+async function displayAllProducts(sortedProducts = null) {
+  const products = sortedProducts || (await getAllProducts());
+
   mainContainer.innerHTML = products.map(mapProductToCard).join(" ");
 
   const addToCartButtons = document.querySelectorAll(".add-to-cart");
-
   addToCartButtons.forEach((button) => {
     button.addEventListener("click", () => {
       const productId = button.getAttribute("data-id");
@@ -31,5 +35,28 @@ async function displayAllProducts() {
 
       localStorage.setItem("cart", JSON.stringify(cart));
     });
+  });
+}
+
+function setupPriceSort() {
+  const priceSortSelect = document.getElementById("price-sort");
+
+  priceSortSelect.addEventListener("change", async (event) => {
+    const sortOrder = event.target.value;
+    const products = await getAllProducts();
+
+    let sortedProducts;
+
+    if (sortOrder === "asc") {
+      sortedProducts = products.sort(
+        (a, b) => parseFloat(a.price) - parseFloat(b.price)
+      );
+    } else if (sortOrder === "desc") {
+      sortedProducts = products.sort(
+        (a, b) => parseFloat(b.price) - parseFloat(a.price)
+      );
+    }
+
+    displayAllProducts(sortedProducts);
   });
 }
