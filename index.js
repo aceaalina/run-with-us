@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   displayAllProducts();
   setupPriceSort();
   setupColorSort();
+  setupSizeSort();
 });
 
 const mainContainer = document.querySelector(".main");
@@ -16,22 +17,33 @@ async function displayAllProducts(sortedProducts = null) {
 
   const addToCartButtons = document.querySelectorAll(".add-to-cart");
   addToCartButtons.forEach((button) => {
-    button.addEventListener("click", () => {
+    button.addEventListener("click", async () => {
       const productId = button.getAttribute("data-id");
       const price = button.getAttribute("data-price");
       const name = button.getAttribute("data-name");
       const imageUrl = button.getAttribute("data-image");
-      const stock = parseInt(button.getAttribute("data-stock"));
+
+      const sizeSelect = button.previousElementSibling;
+      const selectedSize = sizeSelect ? sizeSelect.value : "";
+
+      if (!selectedSize) {
+        alert("Te rugăm să selectezi o mărime.");
+        return;
+      }
 
       let cart = JSON.parse(localStorage.getItem("cart")) || {};
-
-      console.log(`Produs: ${name}, Stock: ${stock}`);
+      const product = await fetchProductDetails(productId);
+      const stock = product.sizeStock[selectedSize] || 0;
 
       if (cart[productId]) {
-        if (cart[productId].quantity < stock) {
-          cart[productId].quantity += 1;
+        if (cart[productId].size && cart[productId].size[selectedSize]) {
+          if (cart[productId].size[selectedSize] < stock) {
+            cart[productId].size[selectedSize] += 1;
+          } else {
+            alert("Stoc epuizat pentru produsul " + name);
+          }
         } else {
-          alert("Stoc epuizat pentru produsul " + name);
+          cart[productId].size[selectedSize] = 1;
         }
       } else {
         cart[productId] = {
@@ -39,41 +51,22 @@ async function displayAllProducts(sortedProducts = null) {
           price: price,
           name: name,
           imageUrl: imageUrl,
-          stock: stock,
+          size: { [selectedSize]: 1 },
         };
       }
 
       localStorage.setItem("cart", JSON.stringify(cart));
+      showConfirmationMessage(
+        `${name} (${selectedSize}) a fost adăugat în coș!`
+      );
     });
   });
 }
 
-function addToCart(product) {
-  let cart = JSON.parse(localStorage.getItem("cart")) || {};
-  const productId = product.id;
-
-  if (cart[productId]) {
-    if (cart[productId].quantity < product.stock) {
-      cart[productId].quantity += 1;
-      showConfirmationMessage(`${product.name} a fost adăugat în coș!`);
-    } else {
-      alert(`Stoc epuizat pentru produsul ${product.name}`);
-    }
-  } else {
-    cart[productId] = {
-      quantity: 1,
-      price: product.price,
-      name: product.name,
-      imageUrl: product.imageUrl,
-      stock: product.stock,
-    };
-    showConfirmationMessage(`${product.name} a fost adăugat în coș!`);
-  }
-  console.log(
-    `Produs: ${product.name}, Stoc actual: ${cart[productId].quantity}, Stoc disponibil: ${product.stock}`
-  );
-
-  localStorage.setItem("cart", JSON.stringify(cart));
+async function fetchProductDetails(productId) {
+  const url = `https://668d7a51099db4c579f3178d.mockapi.io/products/${productId}`;
+  const response = await fetch(url);
+  return response.json();
 }
 
 function showConfirmationMessage(message) {
@@ -87,7 +80,6 @@ function showConfirmationMessage(message) {
     }, 3000);
   }
 }
-
 function setupPriceSort() {
   const priceSortSelect = document.getElementById("price-sort");
 
@@ -125,6 +117,27 @@ function setupColorSort() {
     } else {
       filteredProducts = products.filter(
         (product) => product.color && product.color.includes(selectedColor)
+      );
+    }
+
+    displayAllProducts(filteredProducts);
+  });
+}
+
+function setupSizeSort() {
+  const sizeSortSelect = document.getElementById("size-sort");
+
+  sizeSortSelect.addEventListener("change", async (event) => {
+    const selectedSize = event.target.value;
+    const products = await getAllProducts();
+
+    let filteredProducts;
+
+    if (selectedSize === "all") {
+      filteredProducts = products;
+    } else {
+      filteredProducts = products.filter(
+        (product) => product.size && product.size.includes(selectedSize)
       );
     }
 

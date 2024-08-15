@@ -10,68 +10,129 @@ async function showProductDetails() {
     const response = await fetch(`${url}/${productId}`);
     const product = await response.json();
 
-    let currentStock = product.stock;
+    const sizeOptions = product.size
+      .map((size) => `<option value="${size}">${size}</option>`)
+      .join("");
+    const sizeStock = product.size
+      .map(
+        (size) => `<p>${size}: ${product.sizeStock[size] || 0} disponibile</p>`
+      )
+      .join("");
 
     const mainContainer = document.querySelector(".main");
-    const addToCartButton = `<button id="add-to-cart">Adaugă în coș</button>`;
-
     mainContainer.innerHTML = `
       <div class="product-details">
         <img src="../${product.imageUrl}" alt="${product.name}" />
         <h2>${product.name}</h2>
         <p>${product.details}</p>
         <p>Preț: ${product.price} lei</p>
-        <p id="stock-info">Stoc: ${currentStock}</p>
-        ${addToCartButton}
+        <div id="stock-info">${sizeStock}</div>
+        <select id="size-select">
+          ${sizeOptions}
+        </select>
+        <button id="add-to-cart">Adaugă în coș</button>
       </div>
     `;
 
     const addToCartBtn = document.getElementById("add-to-cart");
+    const sizeSelect = document.getElementById("size-select");
 
-    addToCartBtn.addEventListener("click", () => {
-      if (currentStock > 0) {
-        addToCart(product);
-        currentStock--;
-        document.getElementById(
-          "stock-info"
-        ).textContent = `Stoc: ${currentStock}`;
+    function updateAddToCartButton() {
+      const selectedSize = sizeSelect.value;
+      const sizeStockAvailable = product.sizeStock[selectedSize] || 0;
 
-        if (currentStock === 0) {
+      if (sizeStockAvailable > 0) {
+        addToCartBtn.disabled = false;
+        addToCartBtn.textContent = "Adaugă în coș";
+      } else {
+        addToCartBtn.disabled = true;
+        addToCartBtn.textContent = "Stoc epuizat";
+      }
+    }
+
+    updateAddToCartButton();
+
+    sizeSelect.addEventListener("change", () => {
+      updateAddToCartButton();
+    });
+
+    addToCartBtn.addEventListener("click", async () => {
+      const selectedSize = sizeSelect.value;
+
+      if (!selectedSize) {
+        alert("Te rugăm să selectezi o mărime.");
+        return;
+      }
+
+      const sizeStockAvailable = product.sizeStock[selectedSize] || 0;
+
+      if (sizeStockAvailable > 0) {
+        await addToCart(product, selectedSize);
+        product.sizeStock[selectedSize]--;
+        await updateProductStock(productId, product.sizeStock);
+
+        document.getElementById("stock-info").innerHTML = product.size
+          .map(
+            (size) =>
+              `<p>${size}: ${product.sizeStock[size] || 0} disponibile</p>`
+          )
+          .join("");
+
+        updateAddToCartButton();
+
+        if (product.sizeStock[selectedSize] === 0) {
           addToCartBtn.disabled = true;
           addToCartBtn.textContent = "Stoc epuizat";
         }
+      } else {
+        alert("Stoc epuizat pentru această mărime.");
       }
     });
-
-    if (currentStock === 0) {
-      addToCartBtn.disabled = true;
-      addToCartBtn.textContent = "Stoc epuizat";
-    }
   } catch (error) {
     console.error("Error loading product details:", error);
   }
 }
 
-function addToCart(product) {
+async function addToCart(product, selectedSize) {
   let cart = JSON.parse(localStorage.getItem("cart")) || {};
   const productId = product.id;
 
-  if (cart[productId]) {
-    if (cart[productId].quantity < product.stock) {
-      cart[productId].quantity += 1;
-    }
-  } else {
+  if (!cart[productId]) {
     cart[productId] = {
-      quantity: 1,
+      quantity: 0,
       price: product.price,
       name: product.name,
       imageUrl: product.imageUrl,
-      stock: product.stock,
+      size: {},
     };
   }
 
-  localStorage.setItem("cart", JSON.stringify(cart));
-  showConfirmationMessage(`${product.name} a fost adăugat în coș!`);
+  if (!cart[productId].size[selectedSize]) {
+    cart[productId].size[selectedSize] = 0;
+  }
+
+  if (cart[productId].size[selectedSize] < product.sizeStock[selectedSize]) {
+    cart[productId].size[selectedSize] += 1;
+    cart[productId].quantity += 1;
+    localStorage.setItem("cart", JSON.stringify(cart));
+    showConfirmationMessage(
+      `${product.name} (${selectedSize}) a fost adăugat în coș!`
+    );
+  } else {
+    alert("Stoc epuizat pentru această mărime.");
+  }
+}
+
+async function updateProductStock(productId, sizeStock) {
+  await fetch(`${url}/${productId}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      sizeStock: sizeStock,
+    }),
+  });
 }
 
 function showConfirmationMessage(message) {
