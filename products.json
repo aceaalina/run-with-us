@@ -1,35 +1,12 @@
-mockapi.io
-Docs
-
-Projects
-r
-Run With Us
-
-
-API endpoint
-https://668d7a51099db4c579f3178d.mockapi.io/:endpoint
-New resource
-Generate allReset all
-products
-20
-Data
-Edit
-
-Contact
-help@mockapi.io
-Resource data - products
-
-Resource data
-Edit/replace data for products resource. Data must be an array and a valid JSON.
 [
-  {
+{
     "id": "1",
     "name": "Tricou pentru alergare",
     "price": 90,
     "imageUrl": "images/tricou_alergare.png",
     "details": "Tricou din material respirabil din poliester, ideal pentru antrenamente intense. Oferă uscare rapidă și confort sporit. Se recomandă pentru primăvară și vară, fiind perfect pentru alergare.",
     "color": [
-      "alb",
+      "rosu",
       "negru",
       "albastru"
     ],
@@ -48,9 +25,7 @@ Edit/replace data for products resource. Data must be an array and a valid JSON.
     "imageUrl": "images/pantaloni_scurti_alergare.png",
     "details": "Pantaloni scurți din material sintetic de poliester, cu tehnologie de uscare rapidă. Asigură flexibilitate și confort în timpul alergării. Pot fi purtați în primăvară și vară.",
     "color": [
-      "negru",
-      "gri",
-      "verde"
+      "negru"
     ],
     "size": [
       "S",
@@ -85,8 +60,6 @@ Edit/replace data for products resource. Data must be an array and a valid JSON.
     "imageUrl": "images/jacheta_alergare.png",
     "details": "Jachetă din material rezistent la apă și fleece, ideală pentru zile reci și vântoase. Oferă protecție împotriva vântului și ploii, fiind potrivită pentru toamnă și iarnă. Perfectă pentru alergări în condiții meteorologice nefavorabile.",
     "color": [
-      "negru",
-      "roșu",
       "albastru"
     ],
     "size": [
@@ -104,9 +77,7 @@ Edit/replace data for products resource. Data must be an array and a valid JSON.
     "imageUrl": "images/sapca_alergare.png",
     "details": "Șapcă din material ușor, cu protecție UV, ideală pentru zile însorite. Asigură confort și protecție solară, fiind potrivită pentru sezonul cald de vară. Utilă pentru alergare în aer liber.",
     "color": [
-      "negru",
-      "alb",
-      "albastru"
+      "alb"
     ],
     "size": [
       "Universal"
@@ -120,8 +91,7 @@ Edit/replace data for products resource. Data must be an array and a valid JSON.
     "imageUrl": "images/manusi_alergare.png",
     "details": "Mănuși din material cald și confortabil, protejează împotriva frigului. Ideal pentru toamnă și iarnă, oferind căldură și confort în timpul alergărilor în condiții reci.",
     "color": [
-      "negru",
-      "gri"
+      "negru"
     ],
     "size": [
       "S",
@@ -137,7 +107,7 @@ Edit/replace data for products resource. Data must be an array and a valid JSON.
     "imageUrl": "images/sosete_compresie.png",
     "details": "Șosete din material elastic, care îmbunătățesc circulația sângelui și oferă suport pentru gambe. Recomandate pentru primăvară și vară, ideale pentru alergare și antrenamente.",
     "color": [
-      "negru",
+      "albastru",
       "alb"
     ],
     "size": [
@@ -155,7 +125,7 @@ Edit/replace data for products resource. Data must be an array and a valid JSON.
     "details": "Borsetă din material ușor, ideală pentru transportul obiectelor esențiale în timpul alergării. Oferă acces facil și depozitare sigură, potrivită pentru primăvară și vară.",
     "color": [
       "negru",
-      "gri"
+      "albastru"
     ],
     "size": [
       "Universal"
@@ -169,8 +139,7 @@ Edit/replace data for products resource. Data must be an array and a valid JSON.
     "imageUrl": "images/hanorac_alergare.png",
     "details": "Hanorac confecționat din material moale și călduros, ideal pentru zile răcoroase. Oferă căldură și confort, fiind potrivit pentru toamnă și iarnă, ideal pentru alergare și antrenamente în aer liber.",
     "color": [
-      "negru",
-      "albastru"
+      "nportocaliu"
     ],
     "size": [
       "S",
@@ -187,8 +156,7 @@ Edit/replace data for products resource. Data must be an array and a valid JSON.
     "imageUrl": "images/vesta_reflectorizanta.png",
     "details": "Vestă reflectorizantă din material ușor, asigură vizibilitate maximă în condiții de lumină scăzută. Ideală pentru alergare pe timp de noapte, potrivită pentru primăvară și toamnă.",
     "color": [
-      "galben",
-      "portocaliu"
+      "galben"
     ],
     "size": [
       "S",
@@ -205,8 +173,7 @@ Edit/replace data for products resource. Data must be an array and a valid JSON.
     "imageUrl": "images/bluza_termica.png",
     "details": "Bluză termică din material izolat, menține căldura în timpul alergărilor pe timp de iarnă. Oferă izolație termică și confort, fiind potrivită pentru sezonul rece și activități în aer liber în condiții de frig.",
     "color": [
-      "negru",
-      "gri"
+      "negru"
     ],
     "size": [
       "S",
@@ -223,7 +190,6 @@ Edit/replace data for products resource. Data must be an array and a valid JSON.
     "imageUrl": "images/pantaloni_alergare.png",
     "details": "Pantaloni din material elastic care oferă libertate de mișcare și confort. Potriviți pentru primăvară și toamnă, ideali pentru alergare și antrenamente.",
     "color": [
-      "negru",
       "albastru"
     ],
     "size": [
@@ -241,8 +207,7 @@ Edit/replace data for products resource. Data must be an array and a valid JSON.
     "imageUrl": "images/banda_cap.png",
     "details": "Bandă din material moale, protejează împotriva transpirației și frigului. Ideală pentru alergare în condiții de frig sau pentru a absorbi transpirația, potrivită pentru primăvară și toamnă.",
     "color": [
-      "negru",
-      "gri"
+      "roz"
     ],
     "size": [
       "Universal"
@@ -256,8 +221,7 @@ Edit/replace data for products resource. Data must be an array and a valid JSON.
     "imageUrl": "images/sosete_alergare.png",
     "details": "Șosete din material absorbant și respirabil, oferă confort și susținere în timpul alergării. Potrivite pentru toate sezoanele, asigură un bun suport și prevenirea iritațiilor.",
     "color": [
-      "alb",
-      "negru"
+      "galben"
     ],
     "size": [
       "S",
@@ -273,8 +237,7 @@ Edit/replace data for products resource. Data must be an array and a valid JSON.
     "imageUrl": "images/pantaloni_alergare_scurti.png",
     "details": "Pantaloni scurți din material ușor, cu buzunare pentru depozitarea obiectelor mici. Ideali pentru primăvară și vară, oferă libertate de mișcare și confort în timpul alergării.",
     "color": [
-      "negru",
-      "albastru"
+      "negru"
     ],
     "size": [
       "S",
@@ -291,8 +254,7 @@ Edit/replace data for products resource. Data must be an array and a valid JSON.
     "imageUrl": "images/tricou_compresie.png",
     "details": "Tricou din material de compresie, oferă suport muscular și confort. Ideal pentru antrenamente intense, potrivit pentru toate sezoanele, asigură o bună susținere musculară și prevenirea oboselii.",
     "color": [
-      "negru",
-      "alb"
+      "roz"
     ],
     "size": [
       "S",
@@ -309,8 +271,7 @@ Edit/replace data for products resource. Data must be an array and a valid JSON.
     "imageUrl": "images/bluza_alergare_lunga.png",
     "details": "Bluză din material elastic, cu mâneci lungi, ideală pentru alergări în zile răcoroase. Oferă confort și protecție suplimentară în sezonul de toamnă și primăvară.",
     "color": [
-      "negru",
-      "albastru"
+      "galben"
     ],
     "size": [
       "S",
@@ -327,8 +288,7 @@ Edit/replace data for products resource. Data must be an array and a valid JSON.
     "imageUrl": "images/sort_alergare.png",
     "details": "Șort din material respirabil și ușor, ideal pentru alergări în sezonul cald. Oferă confort și libertate de mișcare, potrivit pentru primăvară și vară.",
     "color": [
-      "negru",
-      "gri"
+      "albastru"
     ],
     "size": [
       "S",
@@ -362,8 +322,7 @@ Edit/replace data for products resource. Data must be an array and a valid JSON.
     "imageUrl": "images/hanorac_gluga.png",
     "details": "Hanorac din material călduros, cu glugă, ideal pentru antrenamentele în aer liber în sezonul rece. Oferă căldură și protecție, potrivit pentru toamnă și iarnă.",
     "color": [
-      "negru",
-      "gri"
+      "albastru"
     ],
     "size": [
       "S",
@@ -374,358 +333,4 @@ Edit/replace data for products resource. Data must be an array and a valid JSON.
     "stock": 16
   }
 ]
-[
-  {
-    "id": "1",
-    "name": "Tricou pentru alergare",
-    "price": 90,
-    "imageUrl": "images/tricou_alergare.png",
-    "details": "Tricou din material respirabil din poliester, ideal pentru antrenamente intense. Oferă uscare rapidă și confort sporit. Se recomandă pentru primăvară și vară, fiind perfect pentru alergare.",
-    "color": [
-      "alb",
-      "negru",
-      "albastru"
-    ],
-    "size": [
-      "S",
-      "M",
-      "L",
-      "XL"
-    ],
-    "stock": 30
-  },
-  {
-    "id": "2",
-    "name": "Pantaloni scurți pentru alergare",
-    "price": 80,
-    "imageUrl": "images/pantaloni_scurti_alergare.png",
-    "details": "Pantaloni scurți din material sintetic de poliester, cu tehnologie de uscare rapidă. Asigură flexibilitate și confort în timpul alergării. Pot fi purtați în primăvară și vară.",
-    "color": [
-      "negru",
-      "gri",
-      "verde"
-    ],
-    "size": [
-      "S",
-      "M",
-      "L",
-      "XL"
-    ],
-    "stock": 25
-  },
-  {
-    "id": "3",
-    "name": "Colanți de compresie",
-    "price": 150,
-    "imageUrl": "images/colanti_compresie.png",
-    "details": "Colanți din material de compresie cu elastan, care oferă suport muscular și confort maxim. Ideal pentru antrenamente intense și alergare în sezonul toamnă-iarnă. Îmbunătățesc circulația sanguină și reduc oboseala.",
-    "color": [
-      "negru",
-      "albastru"
-    ],
-    "size": [
-      "S",
-      "M",
-      "L",
-      "XL"
-    ],
-    "stock": 15
-  },
-  {
-    "id": "4",
-    "name": "Jachetă de alergare",
-    "price": 200,
-    "imageUrl": "images/jacheta_alergare.png",
-    "details": "Jachetă din material rezistent la apă și fleece, ideală pentru zile reci și vântoase. Oferă protecție împotriva vântului și ploii, fiind potrivită pentru toamnă și iarnă. Perfectă pentru alergări în condiții meteorologice nefavorabile.",
-    "color": [
-      "negru",
-      "roșu",
-      "albastru"
-    ],
-    "size": [
-      "S",
-      "M",
-      "L",
-      "XL"
-    ],
-    "stock": 10
-  },
-  {
-    "id": "5",
-    "name": "Șapcă pentru alergare",
-    "price": 40,
-    "imageUrl": "images/sapca_alergare.png",
-    "details": "Șapcă din material ușor, cu protecție UV, ideală pentru zile însorite. Asigură confort și protecție solară, fiind potrivită pentru sezonul cald de vară. Utilă pentru alergare în aer liber.",
-    "color": [
-      "negru",
-      "alb",
-      "albastru"
-    ],
-    "size": [
-      "Universal"
-    ],
-    "stock": 50
-  },
-  {
-    "id": "6",
-    "name": "Mănuși de alergare",
-    "price": 70,
-    "imageUrl": "images/manusi_alergare.png",
-    "details": "Mănuși din material cald și confortabil, protejează împotriva frigului. Ideal pentru toamnă și iarnă, oferind căldură și confort în timpul alergărilor în condiții reci.",
-    "color": [
-      "negru",
-      "gri"
-    ],
-    "size": [
-      "S",
-      "M",
-      "L"
-    ],
-    "stock": 20
-  },
-  {
-    "id": "7",
-    "name": "Șosete de compresie",
-    "price": 50,
-    "imageUrl": "images/sosete_compresie.png",
-    "details": "Șosete din material elastic, care îmbunătățesc circulația sângelui și oferă suport pentru gambe. Recomandate pentru primăvară și vară, ideale pentru alergare și antrenamente.",
-    "color": [
-      "negru",
-      "alb"
-    ],
-    "size": [
-      "S",
-      "M",
-      "L"
-    ],
-    "stock": 40
-  },
-  {
-    "id": "8",
-    "name": "Borsetă pentru alergare",
-    "price": 60,
-    "imageUrl": "images/borseta_alergare.png",
-    "details": "Borsetă din material ușor, ideală pentru transportul obiectelor esențiale în timpul alergării. Oferă acces facil și depozitare sigură, potrivită pentru primăvară și vară.",
-    "color": [
-      "negru",
-      "gri"
-    ],
-    "size": [
-      "Universal"
-    ],
-    "stock": 35
-  },
-  {
-    "id": "9",
-    "name": "Hanorac de alergare",
-    "price": 130,
-    "imageUrl": "images/hanorac_alergare.png",
-    "details": "Hanorac confecționat din material moale și călduros, ideal pentru zile răcoroase. Oferă căldură și confort, fiind potrivit pentru toamnă și iarnă, ideal pentru alergare și antrenamente în aer liber.",
-    "color": [
-      "negru",
-      "albastru"
-    ],
-    "size": [
-      "S",
-      "M",
-      "L",
-      "XL"
-    ],
-    "stock": 18
-  },
-  {
-    "id": "10",
-    "name": "Vestă reflectorizantă",
-    "price": 90,
-    "imageUrl": "images/vesta_reflectorizanta.png",
-    "details": "Vestă reflectorizantă din material ușor, asigură vizibilitate maximă în condiții de lumină scăzută. Ideală pentru alergare pe timp de noapte, potrivită pentru primăvară și toamnă.",
-    "color": [
-      "galben",
-      "portocaliu"
-    ],
-    "size": [
-      "S",
-      "M",
-      "L",
-      "XL"
-    ],
-    "stock": 22
-  },
-  {
-    "id": "11",
-    "name": "Bluză termică",
-    "price": 120,
-    "imageUrl": "images/bluza_termica.png",
-    "details": "Bluză termică din material izolat, menține căldura în timpul alergărilor pe timp de iarnă. Oferă izolație termică și confort, fiind potrivită pentru sezonul rece și activități în aer liber în condiții de frig.",
-    "color": [
-      "negru",
-      "gri"
-    ],
-    "size": [
-      "S",
-      "M",
-      "L",
-      "XL"
-    ],
-    "stock": 28
-  },
-  {
-    "id": "12",
-    "name": "Pantaloni de alergare",
-    "price": 110,
-    "imageUrl": "images/pantaloni_alergare.png",
-    "details": "Pantaloni din material elastic care oferă libertate de mișcare și confort. Potriviți pentru primăvară și toamnă, ideali pentru alergare și antrenamente.",
-    "color": [
-      "negru",
-      "albastru"
-    ],
-    "size": [
-      "S",
-      "M",
-      "L",
-      "XL"
-    ],
-    "stock": 17
-  },
-  {
-    "id": "13",
-    "name": "Bandadă pentru cap",
-    "price": 35,
-    "imageUrl": "images/banda_cap.png",
-    "details": "Bandă din material moale, protejează împotriva transpirației și frigului. Ideală pentru alergare în condiții de frig sau pentru a absorbi transpirația, potrivită pentru primăvară și toamnă.",
-    "color": [
-      "negru",
-      "gri"
-    ],
-    "size": [
-      "Universal"
-    ],
-    "stock": 60
-  },
-  {
-    "id": "14",
-    "name": "Șosete de alergare",
-    "price": 45,
-    "imageUrl": "images/sosete_alergare.png",
-    "details": "Șosete din material absorbant și respirabil, oferă confort și susținere în timpul alergării. Potrivite pentru toate sezoanele, asigură un bun suport și prevenirea iritațiilor.",
-    "color": [
-      "alb",
-      "negru"
-    ],
-    "size": [
-      "S",
-      "M",
-      "L"
-    ],
-    "stock": 45
-  },
-  {
-    "id": "15",
-    "name": "Pantaloni scurți pentru alergare",
-    "price": 75,
-    "imageUrl": "images/pantaloni_alergare_scurti.png",
-    "details": "Pantaloni scurți din material ușor, cu buzunare pentru depozitarea obiectelor mici. Ideali pentru primăvară și vară, oferă libertate de mișcare și confort în timpul alergării.",
-    "color": [
-      "negru",
-      "albastru"
-    ],
-    "size": [
-      "S",
-      "M",
-      "L",
-      "XL"
-    ],
-    "stock": 30
-  },
-  {
-    "id": "16",
-    "name": "Tricou de compresie",
-    "price": 100,
-    "imageUrl": "images/tricou_compresie.png",
-    "details": "Tricou din material de compresie, oferă suport muscular și confort. Ideal pentru antrenamente intense, potrivit pentru toate sezoanele, asigură o bună susținere musculară și prevenirea oboselii.",
-    "color": [
-      "negru",
-      "alb"
-    ],
-    "size": [
-      "S",
-      "M",
-      "L",
-      "XL"
-    ],
-    "stock": 20
-  },
-  {
-    "id": "17",
-    "name": "Bluză de alergare cu mânecă lungă",
-    "price": 95,
-    "imageUrl": "images/bluza_alergare_lunga.png",
-    "details": "Bluză din material elastic, cu mâneci lungi, ideală pentru alergări în zile răcoroase. Oferă confort și protecție suplimentară în sezonul de toamnă și primăvară.",
-    "color": [
-      "negru",
-      "albastru"
-    ],
-    "size": [
-      "S",
-      "M",
-      "L",
-      "XL"
-    ],
-    "stock": 25
-  },
-  {
-    "id": "18",
-    "name": "Șort de alergare",
-    "price": 85,
-    "imageUrl": "images/sort_alergare.png",
-    "details": "Șort din material respirabil și ușor, ideal pentru alergări în sezonul cald. Oferă confort și libertate de mișcare, potrivit pentru primăvară și vară.",
-    "color": [
-      "negru",
-      "gri"
-    ],
-    "size": [
-      "S",
-      "M",
-      "L",
-      "XL"
-    ],
-    "stock": 27
-  },
-  {
-    "id": "19",
-    "name": "Colanți pentru iarnă",
-    "price": 160,
-    "imageUrl": "images/colanti_iarna.png",
-    "details": "Colanți din material termic și izolat, oferă căldură și confort maxim în timpul alergărilor pe timp de iarnă. Ideal pentru temperaturi scăzute, oferind protecție împotriva frigului.",
-    "color": [
-      "negru"
-    ],
-    "size": [
-      "S",
-      "M",
-      "L",
-      "XL"
-    ],
-    "stock": 12
-  },
-  {
-    "id": "20",
-    "name": "Hanorac cu glugă",
-    "price": 140,
-    "imageUrl": "images/hanorac_gluga.png",
-    "details": "Hanorac din material călduros, cu glugă, ideal pentru antrenamentele în aer liber în sezonul rece. Oferă căldură și protecție, potrivit pentru toamnă și iarnă.",
-    "color": [
-      "negru",
-      "gri"
-    ],
-    "size": [
-      "S",
-      "M",
-      "L",
-      "XL"
-    ],
-    "stock": 16
-  }
-]
-Close
-Update
+

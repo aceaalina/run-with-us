@@ -12,17 +12,18 @@ body {
 }
 
 .confirmation-message {
-  display: none;
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: #e74c3c;
+  top: 50px;
+  right: 100px;
+  background-color: rgba(231, 76, 60, 0.9);
   color: white;
-  text-align: center;
-  padding: 10px;
-  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: none;
   z-index: 1000;
+  max-width: 500px;
+  text-align: center;
 }
 
 .product-details {

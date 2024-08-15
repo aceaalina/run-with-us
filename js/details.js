@@ -10,7 +10,6 @@ async function showProductDetails() {
     const response = await fetch(`${url}/${productId}`);
     const product = await response.json();
 
-    // Stochează stocul curent în variabilă locală
     let currentStock = product.stock;
 
     const mainContainer = document.querySelector(".main");

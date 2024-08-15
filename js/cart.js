@@ -1,5 +1,3 @@
-import { getProductById } from "../api/products.js";
-
 document.addEventListener("DOMContentLoaded", () => {
   const cart = JSON.parse(localStorage.getItem("cart")) || {};
   const cartItemsContainer = document.querySelector(".cart-items");
@@ -14,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const productCard = document.createElement("div");
       productCard.className = "cart-item";
-      const descreaseDisabled = product.quantity === 1 ? "disabled" : "";
+      const decreaseDisabled = product.quantity === 1 ? "disabled" : "";
       const increaseDisabled =
         product.quantity >= product.stock ? "disabled" : "";
 
@@ -22,10 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
         <img src="../${product.imageUrl}" alt="${product.name}" />
         <div class="details">
           <span>${product.name}</span>
-          <span>${product.details || "Detalii indisponibile"}</span>
         </div>
         <div class="quantity">
-          <button data-id="${id}" ${descreaseDisabled} class="decrease">-</button>
+          <button data-id="${id}" ${decreaseDisabled} class="decrease">-</button>
           <span>${product.quantity}</span>
           <button data-id="${id}" ${increaseDisabled} class="increase">+</button>
         </div>
@@ -41,21 +38,23 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   cartItemsContainer.addEventListener("click", (e) => {
+    const id = e.target.getAttribute("data-id");
+
     if (e.target.classList.contains("increase")) {
-      const id = e.target.getAttribute("data-id");
       const product = cart[id];
       if (product.quantity < product.stock) {
         cart[id].quantity += 1;
       }
     } else if (e.target.classList.contains("decrease")) {
-      const id = e.target.getAttribute("data-id");
       if (cart[id].quantity > 1) {
         cart[id].quantity -= 1;
+      } else {
+        delete cart[id];
       }
     } else if (e.target.classList.contains("delete")) {
-      const id = e.target.getAttribute("data-id");
       delete cart[id];
     }
+
     localStorage.setItem("cart", JSON.stringify(cart));
     updateCart();
   });
