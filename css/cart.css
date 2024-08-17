@@ -15,6 +15,10 @@ body {
   flex-direction: column;
 }
 
+.main {
+  margin-left: 0;
+}
+
 .shopping-cart {
   background: #fff;
   border-radius: 5px;

@@ -26,6 +26,10 @@ body {
   text-align: center;
 }
 
+.main {
+  margin-left: 0;
+}
+
 .product-details {
   background: #fff;
   border-radius: 5px;
