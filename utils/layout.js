@@ -1,4 +1,6 @@
 export function mapProductToCard(product) {
+  const sizes = Array.isArray(product.size) ? product.size : [];
+
   return `
     <div class="product-card flex-col gap-20 items-center justify-between">
       <h3 class="card-title">${product.name}</h3>
@@ -8,7 +10,7 @@ export function mapProductToCard(product) {
       <p class="card-price">${product.price} lei</p>
       <p class="card-size">Selectați mărimea:</p>
       <select class="size-select" data-id="${product.id}">
-        ${product.size
+        ${sizes
           .map((size) => `<option value="${size}">${size}</option>`)
           .join("")}
       </select>
